@@ -26,6 +26,9 @@ function App() {
   };
 
   const handleSubmit = async () => {
+    if (input === "") {
+      return;
+    }
     setTaskAdded(true);
     const request = await axios.post("/api/v1/tasks", {
       name: input,
